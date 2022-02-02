@@ -315,7 +315,10 @@ class OrderBuilder(EnumEnforcer):
         `str`. See :ref:`number_truncation`.
         '''
         if isinstance(price, str):
+            print(f'str before  trunc:{price}')
             self._price = price
+            print(f'str after  trunc:{self._price}')
+
         else:
             print(f'before  trunc:{price}')
             self._price = truncate_float(price)
