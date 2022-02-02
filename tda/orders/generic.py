@@ -317,7 +317,9 @@ class OrderBuilder(EnumEnforcer):
         if isinstance(price, str):
             self._price = price
         else:
+            print(f'before  trunc:{price}')
             self._price = truncate_float(price)
+            print(f'after  trunc:{self._price}')
         return self
 
     def copy_price(self, price):

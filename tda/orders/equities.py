@@ -70,7 +70,7 @@ def equity_sell_limit(symbol, quantity, price):
     from tda.orders.common import Duration, EquityInstruction
     from tda.orders.common import OrderStrategyType, OrderType, Session
     from tda.orders.generic import OrderBuilder
-
+    print(f'sell limit price:{price}')
     return (OrderBuilder()
             .set_order_type(OrderType.LIMIT)
             .set_price(price)
