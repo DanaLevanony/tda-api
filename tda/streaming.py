@@ -243,12 +243,15 @@ class StreamClient(EnumEnforcer):
 
         self._socket = await ws_client.connect(
                 wss_url, **websocket_connect_args)
-        print(time.time())
+        t1 = time.time()
         pong_waiter = await self._socket.ping()
         await pong_waiter
-        print(time.time())
+        t2 = time.time()
         print("got socket")
-        print(time.time())
+        t3 = time.time()
+        print(f'socket ping time:{t2-t1}')
+        print(f'print time:{t3-t2}')
+
         exit(0)
 
         # Initialize miscellaneous parameters
