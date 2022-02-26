@@ -11,7 +11,7 @@ import json
 import logging
 import tda
 import urllib.parse
-
+import time
 import websockets.legacy.client as ws_client
 from websockets.extensions.permessage_deflate import ClientPerMessageDeflateFactory
 
@@ -243,9 +243,12 @@ class StreamClient(EnumEnforcer):
 
         self._socket = await ws_client.connect(
                 wss_url, **websocket_connect_args)
+        print(time.time())
         pong_waiter = await self._socket.ping()
         await pong_waiter
+        print(time.time())
         print("got socket")
+        print(time.time())
         exit(0)
 
         # Initialize miscellaneous parameters
