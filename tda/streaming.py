@@ -243,6 +243,8 @@ class StreamClient(EnumEnforcer):
 
         self._socket = await ws_client.connect(
                 wss_url, **websocket_connect_args)
+        print("got socket")
+        exit(0)
 
         # Initialize miscellaneous parameters
         self._source = principals['streamerInfo']['appId']
