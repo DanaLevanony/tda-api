@@ -243,6 +243,8 @@ class StreamClient(EnumEnforcer):
 
         self._socket = await ws_client.connect(
                 wss_url, **websocket_connect_args)
+        pong_waiter = await self._socket.ping()
+        await pong_waiter
         print("got socket")
         exit(0)
 
